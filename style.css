@@ -1,0 +1,228 @@
+/* การตั้งค่าสไตล์พื้นฐาน */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    color: #ff0e0e;
+    overflow: hidden;
+}
+
+/* พื้นหลังแบบ Parallax */
+body {
+    background-image: url('https://www.transparenttextures.com/patterns/swiss-cross.png'); /* ลายตาข่าย */
+    background-size: 30px;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* คอนเทนเนอร์หลัก */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* ส่วนหัว */
+.header {
+    text-align: center;
+    padding: 20px;
+}
+
+/* แอนิเมชันให้ข้อความปรากฏ */
+.animated {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* หัวเรื่องหลัก */
+h1 {
+    font-size: 120px;
+    color: #5b94b1; /* สีเขียวเรืองแสง */
+    text-shadow: 0 0 15px rgba(91, 148, 177, 1), 0 0 25px rgba(91, 148, 177, 1);
+    margin: 0;
+    animation-delay: 0.5s;
+}
+
+/* หัวเรื่องรอง */
+h2 {
+    font-size: 40px;
+    color: #9b47a1; /* สีม่วง */
+    text-align: center;
+    text-shadow: 0 0 10px rgba(155, 71, 161, 1), 0 0 20px rgba(155, 71, 161, 1);
+    margin: 20px 0;
+    animation-delay: 1s;
+}
+
+/* ส่วนเนื้อหาหลัก */
+.content {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    animation-delay: 1.5s;
+}
+
+.description {
+    text-align: center;
+    font-size: 18px;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+    animation-delay: 2s;
+}
+
+.cta {
+    text-align: center;
+    animation-delay: 2.5s;
+}
+
+/* ปุ่มเริ่มต้น */
+.start-btn {
+    background: #00ff99; /* สีเขียวเรืองแสง */
+    color: black;
+    font-size: 24px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 1), 0 0 20px rgba(0, 255, 153, 0.7);
+    transition: all 0.3s ease;
+    animation-delay: 3s;
+}
+
+.start-btn:hover {
+    background: #5b94b1;
+    box-shadow: 0 0 25px rgba(91, 148, 177, 1);
+    color: rgb(233, 233, 233);
+}
+
+/* ส่วนท้าย */
+.footer {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 30px;
+}
+
+/* ไอคอน SVG */
+.eva-icon {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+    animation-delay: 4s;
+}
+
+/* คีย์เฟรมสำหรับแอนิเมชัน */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ปรับการแสดงผลของพื้นหลัง */
+.container {
+    position: relative;
+}
+/* Responsive สำหรับมือถือ */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        height: auto; /* ไม่ fix เต็มจอ ป้องกัน overflow */
+    }
+
+    h1 {
+        font-size: 60px; /* ย่อหัวข้อหลักลง */
+    }
+
+    h2 {
+        font-size: 24px; /* ย่อหัวข้อรอง */
+    }
+
+    .description {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .start-btn {
+        font-size: 18px;
+        padding: 12px 20px;
+        letter-spacing: 1px;
+    }
+
+    .eva-icon {
+        width: 35px;
+        height: 35px;
+        bottom: 5%;
+        right: 5%;
+    }
+
+    .footer {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+/* สำหรับจอเล็กมาก (มือถือเล็ก <480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .start-btn {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+
+    height: 100vh;              /* ให้ container สูงเต็มจอ */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    /* จัดกลางแนวตั้ง */
+    align-items: center;        /* จัดกลางแนวนอน */
+    text-align: center;
+    position: relative;
+    gap: 20px;                  /* ระยะห่างระหว่างแต่ละส่วน */
+}
+
+.footer {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 20px;           /* ระยะห่างเล็กน้อย */
+}
+
+.eva-icon {
+    position: static;           /* เอา absolute ออก ให้จัดกลางกับ flex */
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+    animation-delay: 4s;
+    margin-top: 20px;
+}
+
+
